@@ -30,8 +30,8 @@
                                 />
                             </div>
                         </div>
-                        <div class="flex flex-col md:flex-row">
-                            <div class="mt-8 flex flex-row m-2 w-64">
+                        <div class="flex flex-col md:flex-row mx-2 my-2">
+                            <div class="flex flex-row m-2 w-64">
                                 <div class="relative flex-1">
                                     <label for="search" class="sr-only"
                                         >Buscar</label
@@ -96,21 +96,13 @@
                             <div
                                 class="w-full flex md:justify-end justify-start"
                             >
-                                <jet-nav-link
+                                <Button
+                                    :leftIcon="PlusIcon"
+                                    intent="primary"
+                                    as="a"
                                     :href="route('admin.puestos/create', {})"
-                                    ><button
-                                        class="border-green-700 border bg-white rounded mr-4 w-32 mb:w-42 p-1 hover:bg-aqua transition duration-500"
-                                    >
-                                        <div class="flex flex-row">
-                                            <plus-icon
-                                                class="block w-6 h-6 fill-gray-400"
-                                            />
-                                            <p class="font-bold">
-                                                Agregar Puesto de trabajo
-                                            </p>
-                                        </div>
-                                    </button>
-                                </jet-nav-link>
+                                    >Agregar Puesto</Button
+                                >
                             </div>
                         </div>
 
@@ -202,6 +194,7 @@
 <script setup>
 import AppLayout from "@/Layouts/AppLayout.vue";
 import JetNavLink from "@/Components/NavLink.vue";
+import Button from "@/Components/Shared/Button.vue";
 import Pagination from "@/Components/Shared/Pagination.vue";
 import { fuseComposable } from "../../Composables/fuseComposable";
 import { useFuse } from "@vueuse/integrations/useFuse";
